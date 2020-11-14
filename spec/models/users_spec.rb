@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'Checking User to User Field validations' do
+  context 'Checking User Fields validations' do
     before(:each) do
         @userA = User.create(username: 'apple', fullname: 'Apple Mango')
     end
