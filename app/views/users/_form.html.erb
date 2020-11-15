@@ -1,0 +1,19 @@
+<%= form_for(@user) do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :fullname, "Full Name"%><br />
+    <%= f.text_field :fullname %>
+  </p>
+  
+  <p>
+    <%= f.submit "Sign Up" %>
+  </p>
+<% end %>
