@@ -1,0 +1,17 @@
+<%= form_for(@user, :url => sessions_path) do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username, required: true %>
+  </p>
+  
+  <p>
+    <%= f.submit "Login" %>
+  </p>
+<% end %>
+
+<%= link_to 'Register', new_user_path %>
