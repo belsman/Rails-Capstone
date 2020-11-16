@@ -1,17 +1,27 @@
-<%= form_for(@user, :url => sessions_path) do |f| %>
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-    <% end %>
-  </ul>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username, required: true %>
-  </p>
-  
-  <p>
-    <%= f.submit "Login" %>
-  </p>
-<% end %>
+<div class="user-account border p-2">
+  <div class="jumbotron text-center">
+    <h1 class="text-primary h2">Connect with Buzzer</h1>      
+    <p>Buzzer is the next big thing. It's like twitter. You buzz, not tweet.</p>
+  </div>
 
-<%= link_to 'Register', new_user_path %>
+  <%= form_for(@user, :url => sessions_path) do |f| %>
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+      <% end %>
+    </ul>
+
+    <div class="form-group mt-2">
+      <%= f.label :username, "Usenname:" %>
+      <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
+    </div>
+    
+    <div class="form-grout mt-2">
+      <%= f.submit "Login", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <p class="text-center mt-1">
+    Don't have an account? <%= link_to 'Register here', new_user_path , class: "text-decoration-none" %>
+  </p>
+</div>

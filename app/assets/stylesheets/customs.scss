@@ -1,0 +1,20 @@
+.user-account {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+    .user-account {
+        width: 75%;
+    }
+}
+  
+@media (min-width: 920px) {
+    .user-account {
+        width: 50%;
+    }
+}
+  

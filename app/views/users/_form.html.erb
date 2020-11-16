@@ -4,16 +4,18 @@
         <li><%= error %></li>
     <% end %>
   </ul>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :fullname, "Full Name"%><br />
-    <%= f.text_field :fullname %>
-  </p>
+
+  <div class="form-group mt-2">
+    <%= f.label :username, "Usenname:" %>
+    <%= f.text_field :username, class: 'form-control', placeholder: 'username' %>
+  </div>
+
+  <div class="form-group mt-2">
+    <%= f.label :fullname, "Full Name:" %>
+    <%= f.text_field :fullname, class: 'form-control', placeholder: 'Your Name' %>
+  </div>
   
-  <p>
-    <%= f.submit "Sign Up" %>
-  </p>
+  <div class="mt-2">
+    <%= f.submit "Sign Up", class: 'btn btn-primary' %>
+  </div>
 <% end %>
