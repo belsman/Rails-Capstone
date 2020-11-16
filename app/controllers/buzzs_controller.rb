@@ -1,4 +1,5 @@
 class BuzzsController < ApplicationController
+    before_action :require_login
     include BuzzsHelper
 
     def index

@@ -13,7 +13,6 @@ RSpec.describe "Buzzs", type: :request do
 
         expect(response).to render_template(":index")
         expect(response.body).to include("TWEETS")
-        expect(response.body).to include("WHO TO FOLLOW")
-        expect(response.body).to include("BELLO BABAKOLO")
+        expect(response.body).to include("exboybeekay")
     end
 end
