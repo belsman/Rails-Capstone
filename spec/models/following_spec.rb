@@ -16,16 +16,16 @@ RSpec.describe Following, type: :model do
     end
 
     it 'returns userB is following userA' do
-      expect(@userB.is_following?(@userA)).to be true
+      expect(@userB.following?(@userA)).to be true
     end
 
     it 'returns userA is followed by userC' do
-      expect(@userA.is_followed_by?(@userC)).to be true
+      expect(@userA.followed_by?(@userC)).to be true
     end
 
     it 'returns the userB unfollows userA' do
       @userB.unfollow(@userA)
-      expect(@userB.is_following?(@userA)).to be false
+      expect(@userB.following?(@userA)).to be false
     end
   end
 end

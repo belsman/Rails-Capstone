@@ -16,12 +16,12 @@ class User < ApplicationRecord
         f.destroy unless f.nil?
     end
 
-    def is_following?(user)
+    def following?(user)
         return false if user.id.nil?
         !followed.where(followed_id: user.id).first.nil?
     end
 
-    def is_followed_by?(user)
+    def followed_by?(user)
         return false if user.id.nil?
         !followers.where(follower_id: user.id).first.nil?
     end

@@ -1,1 +1,12 @@
-<h2>Welcome <%= @user.username %></h2>
+<h3><%= @user.username %></h3>
+
+<% if current_user == @user %>
+    <button type="submit">Edit profile</button>
+<% end %>
+
+<% if current_user != @user && !current_user.following?(@user) %>
+    <button type="submit">Follow</button>
+<% else %>
+    <button type="submit">Unfollow</button>
+<% end %>
+
