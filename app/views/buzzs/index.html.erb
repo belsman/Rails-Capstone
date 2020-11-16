@@ -1,1 +1,24 @@
-<h1>Welcome home</h1>
+<h1>Welcome home <%= current_user.username %></h1>
+
+<%= form_for(@new_buzz, :url => buzzs_path) do |f| %>
+  <ul>
+    <% @new_buzz.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= f.text_area :text, required: true %>
+  </p>
+  
+  <p>
+    <%= f.submit "Buzz" %>
+  </p>
+<% end %>
+
+<h3>Posts</h3>
+
+<ul>
+    <% @timeline_buzzs.each do |buzz| %>
+    <li><%= buzz.text %></li>
+    <% end %>
+</ul>
