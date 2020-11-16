@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     def create
         @user = User.where(username: sessions_params[:username]).first
         if @user
-            session[:user_id] = @user.id
+            login(@user)
             redirect_to root_path, notice: "Successfully logged in as #{@user.username}"
         else
             flash.now[:notice] = "Logging in failed. #{sessions_params[:username]} doesn't exist!"

@@ -9,6 +9,8 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
   
       if @user.save
+        login(@user)
+        
         redirect_to buzzs_path, notice: "#{@user.username}, You're welcome to buzzer."
       else
         render :new
