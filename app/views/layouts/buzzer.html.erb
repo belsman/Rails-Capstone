@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Buzzer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag "https://kit.fontawesome.com/a076d05399.js" %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row vh-100">
+          <div id="profile-section" class="col-2 h-100 bg-dark text-secondary p-0">
+            <div class="user-info d-flex p-3">
+              <img class="img-fluid" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar" width="75" height="75">
+              <span class="text-uppercase pl-1 "><%= current_user.fullname %></span>
+            </div>
+            <div class="d-flex justify-content-between p-3">
+              <span class="text-center"><%= @no_followed %><br>Following</span>
+              <span class="text-center"><%= @no_followers %><br>Followers</span>
+            </div>
+            <ul class="user-profile-nav d-flex flex-column">
+              <li>
+                <%= link_to buzzs_path, class: "p-3" do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
+              </li>
+              <li>
+                <%= link_to buzzs_path, class: "p-3" do %>
+                  <i class="fas fa-edit"></i> Edit Profile
+                <% end %>
+              </li>
+              <li>
+                <%= link_to buzzs_path, class: "p-3" do %>
+                  <i class='fas fa-pencil-alt'></i> Buzz
+                <% end %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-10 bg-warning p-0">
+              <nav style="background-color: #333">
+                <div class="left-top">
+                  <a href="#">Logo</a>
+                </div>
+                <div class="right-top">
+                  <a href="#">Pen Icon</a>
+                  <a href="#">Search</a>
+                  <a href="#">Edit profile Icon</a>
+                </div>
+              </nav>
+              <%= yield %>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
