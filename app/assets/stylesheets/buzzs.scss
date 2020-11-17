@@ -18,3 +18,28 @@
         background-color: #1DA1F2;
     }
 }
+
+.top-nav {
+    background-color: #1DA1F2;
+
+    input {
+        width: 20px;
+        border: none;
+        background-image: url('magnify2.svg');
+        background-size: 17px;
+        background-repeat: no-repeat;
+        background-color: inherit;
+        background-position: 5% 50%;
+    }
+
+    input:focus {
+        background-color: #f9f9f9;
+        background-image: url('magnify.svg');
+        border-radius: 7px;
+        outline: none;
+        width: 200px;
+        padding-left: 20px;
+        -webkit-transition: width 0.5s ease-in-out;
+        transition: width 0.5s ease-in-out;
+    }
+}
