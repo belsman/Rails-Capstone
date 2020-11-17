@@ -6,6 +6,12 @@
     transform: translate(-50%, -50%);
 }
 
+.clear-fix {
+    clear: both;
+    display: table;
+    content: "";
+}
+
 @media only screen and (min-width: 768px) {
     .user-account {
         width: 75%;

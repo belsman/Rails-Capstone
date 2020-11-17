@@ -1,3 +1,11 @@
+textarea {
+    resize: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+    box-shadow: none;
+}
+
 .user-info {
     background-color: #14171A;
 }
@@ -42,4 +50,8 @@
         -webkit-transition: width 0.5s ease-in-out;
         transition: width 0.5s ease-in-out;
     }
+}
+
+.bg-twitter-light-gray {
+    background-color: #F5F8FA;
 }

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :authenticated?
+    helper_method :current_user, :authenticated?, :current_time
 
     def authenticated?
         current_user
@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
 
     def login(user)
         session[:user_id] = user.id
+    end
+
+    def current_time
+        Time.now
     end
 end

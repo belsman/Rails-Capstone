@@ -1,0 +1,16 @@
+<%= form_for(@new_buzz, :url => buzzs_path) do |f| %>
+    <ul>
+    <% @new_buzz.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+    <p>
+    <div class="form-group">
+        <%= f.text_area :text, class: 'form-control', required: true %>
+    </div>
+    </p>
+
+    <div class="form-grout my-2">
+        <%= f.submit "Buzz", class: 'btn btn-primary' %>
+    </div>
+<% end %>

@@ -1,0 +1,10 @@
+<div class="buzz-container d-flex w-100 my-2 p-2 bg-white">
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar" width="75" height="75">
+    <div class="px-1 flex-grow-1">
+        <div class="buzz-header d-flex justify-content-between">
+            <span class="text-secondary"><strong><%= buzz.author.fullname %></strong></span>
+            <span><%= distance_of_time_in_words(current_time, buzz.created_at) %></span>
+        </div>
+        <p> <%= buzz.text %></p>
+    </div>
+</div>
