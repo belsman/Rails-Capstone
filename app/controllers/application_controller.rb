@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :authenticated?, :current_time
 
     def authenticated?
-        current_user
+        if session[:user_id]
+            return !current_user.nil?
+        end
+        return false
     end
 
     def require_login
@@ -11,7 +14,11 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-        @current_user ||= User.find_by_id!(session[:user_id])
+        if session[:user_id]
+            @current_user ||= User.find(session[:user_id])
+            return @current_user
+        end
+        return false
     end
 
     def login(user)

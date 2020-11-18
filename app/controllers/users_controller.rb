@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :require_login, only: [:show, :edit]
     include UsersHelper
     layout "buzzer", except: [:new]
   
