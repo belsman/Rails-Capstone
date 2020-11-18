@@ -59,9 +59,9 @@
                       <i class='fas fa-pencil-alt'></i>
                     <% end %>
 
-                    <form action="" method="GET">
-                      <span class="search"><input type="search" name="search"></span>
-                    </form>
+                    <%= form_with(:url => search_index_path) do |f| %>
+                      <span class="search" onKeyPress="return checkSubmit(event)"><%= f.text_field :search %></span>
+                    <% end %>
                 </div>
               </nav>
               <% if notice.present? %>

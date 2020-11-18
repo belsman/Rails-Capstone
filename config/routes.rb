@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit]
   resources :buzzs, only: [:index, :create]
   resources :followings, only: [:create, :destroy]
+  resources :search, only: [:index]
 end
