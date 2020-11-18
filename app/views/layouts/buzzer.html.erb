@@ -21,8 +21,8 @@
               <span class="text-uppercase pl-1 align-self-center"><%= current_user.fullname %></span>
             </div>
             <div class="d-flex justify-content-between p-3">
-              <span class="text-center"><%= @no_followed %><br>Following</span>
-              <span class="text-center"><%= @no_followers %><br>Followers</span>
+              <span class="text-center"><%= current_user.followed_count %><br>Following</span>
+              <span class="text-center"><%= current_user.followers_count %><br>Followers</span>
             </div>
             <ul class="user-profile-nav d-flex flex-column">
               <li>
@@ -38,6 +38,11 @@
               <li>
                 <%= link_to buzzs_path, class: "p-3" do %>
                   <i class='fas fa-pencil-alt'></i> Buzz
+                <% end %>
+              </li>
+              <li>
+                <%= link_to session_path(current_user.id), :method => "delete", class: "p-3 text-danger" do %>
+                  <i class="fas fa-sign-out-alt"></i> Logout
                 <% end %>
               </li>
             </ul>

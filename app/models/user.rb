@@ -40,6 +40,6 @@ class User < ApplicationRecord
 
     def timeline_buzzs
         query_string = "INNER JOIN followings ON followings.followed_id = buzzs.author_id AND followings.follower_id = #{id}"
-        Buzz.joins(query_string)
+        Buzz.joins(query_string).ordered_by_most_recent
     end
 end

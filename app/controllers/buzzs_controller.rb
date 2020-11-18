@@ -5,9 +5,7 @@ class BuzzsController < ApplicationController
 
     def index
         @new_buzz = Buzz.new
-        @timeline_buzzs = current_user.buzzs
-        @no_followed = 0
-        @no_followers = 0
+        @timeline_buzzs = current_user.timeline_buzzs
     end
 
     def create
