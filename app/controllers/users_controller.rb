@@ -20,13 +20,13 @@ class UsersController < ApplicationController
     end
   
     def show
-        @user = User.find(params[:id])
-        @user_buzzs = @user.buzzs
+        @user = User.find_by_id!(params[:id])
+        @user_buzzs = @user.buzzs.ordered_by_most_recent
         @new_buzz = Buzz.new
     end
 
     def edit
-        @user = User.find(params[:id])
+        @user = User.find_by_id!(params[:id])
         @show_media_edit = true
     end
   end
