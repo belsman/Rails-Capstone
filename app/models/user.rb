@@ -42,4 +42,8 @@ class User < ApplicationRecord
         query_string = "INNER JOIN followings ON followings.followed_id = buzzs.author_id AND followings.follower_id = #{id}"
         Buzz.joins(query_string).ordered_by_most_recent
     end
+
+    after_create do
+        follow(self)
+    end
 end
