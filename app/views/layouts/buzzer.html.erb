@@ -31,7 +31,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to buzzs_path, class: "p-3" do %>
+                <%= link_to edit_user_path(current_user.id), class: "p-3" do %>
                   <i class="fas fa-edit"></i> Edit Profile
                 <% end %>
               </li>
@@ -64,6 +64,16 @@
                     </form>
                 </div>
               </nav>
+              <% if notice.present? %>
+                <div class="notice">
+                  <p> <%= notice %> </p>
+                </div>
+              <% end %>
+              <% if alert.present? %>
+                <div class="alert">
+                  <p> <%= alert %> </p>
+                </div>
+              <% end %>
               <%= yield %>
           </div>
         </div>
