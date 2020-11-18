@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :followed, class_name: 'Following', foreign_key: 'follower_id'
 
     def follow(user)
-        followed.create(followed_id: user.id) unless is_following?(user)
+        followed.create(followed_id: user.id) unless following?(user)
     end
 
     def unfollow(user)
@@ -27,14 +27,19 @@ class User < ApplicationRecord
     end
 
     def buzz_count
-        999
+        buzzs.count
     end
 
     def followed_count
-        666
+        followed.count - 1
     end
 
     def followers_count
-        555
+        followers.count - 1
+    end
+
+    def timeline_buzzs
+        query_string = "INNER JOIN followings ON followings.followed_id = buzzs.author_id AND followings.follower_id = #{id}"
+        Buzz.joins(query_string)
     end
 end
