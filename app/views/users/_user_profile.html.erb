@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center py-3">
+    <%= link_to followings_path, class: "text-decoration-none text-secondary big-icon mr-3" do %>
+    <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+    <% end %>
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="100" height="100" >
+    <span class="big-icon ml-3 text-secondary"><i class="fa fa-bug fa-lg" aria-hidden="true"></i></span>
+</div>
+<div class="text-center">
+    <h5 class="text-secondary"><%= @user.fullname %></h5>
+    <span>@<%= @user.username %> </span>
+</div>
+<div class="d-flex justify-content-between text-center border-top border-bottom my-3">
+    <div class="p-3"><b><%= @user.buzz_count %></b><br>Buzzs</div>
+    <div class="border-left border-right p-3"><b><%= @user.followed_count %></b><br>Following</div>
+    <div class="p-3"><b><%= @user.followers_count %></b><br>Followers</div>
+</div>
+
+<div class="d-flex border-bottom p-2 mb-3">
+    <span class="text-secondary">FOLLOWED BY</span>
+</div>
+
+<div class="d-flex p-2">
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="60" height="60" >
+    <div class="pl-2">
+        <strong class="text-secondary"><%= @user.fullname %></strong><br>
+        <span>@<%= @user.username %> </span>
+    </div>
+    <%= link_to followings_path, class: "text-decoration-none text-secondary big-icon ml-auto align-self-center" do %>
+        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+    <% end %>
+</div>

@@ -1,12 +1,21 @@
-<h3><%= @user.username %></h3>
+<div class="d-flex bg-twitter-light-gray">
+  <div class="w-75  border-right">
+    <div class="cover-image">
+        <img src="" alt="">
+    </div>
+    <%= render 'buzzs/buzz_nav' %>
+    <div id="list-and-buzz" class="p-3">
+      <div class="card px-2">
+        <%= render 'buzzs/buzz_form' %>
+      </div>
+      <br>
 
-<% if current_user == @user %>
-    <button type="submit">Edit profile</button>
-<% end %>
-
-<% if current_user != @user && !current_user.following?(@user) %>
-    <button type="submit">Follow</button>
-<% else %>
-    <button type="submit">Unfollow</button>
-<% end %>
-
+      <ul class="buzzs bg-white m-0 p-0">
+        <%= render :partial => "buzzs/buzz", :collection => @user_buzzs %>
+      </ul>
+    </div>
+  </div>
+  <div class="w-25 ml-1">
+    <%= render 'user_profile' %>
+  </div>
+</div>

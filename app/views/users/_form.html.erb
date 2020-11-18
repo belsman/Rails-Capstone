@@ -15,7 +15,11 @@
     <%= f.text_field :fullname, class: 'form-control', placeholder: 'Your Name' %>
   </div>
   
+  <% if @show_media_edit %>
+    <span>We update media here!</span>
+  <% end %>
+
   <div class="mt-2">
-    <%= f.submit "Sign Up", class: 'btn btn-primary' %>
+    <%= f.submit @user.persisted? ? "Update" : "Register", class: 'btn btn-primary' %>
   </div>
 <% end %>

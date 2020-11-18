@@ -25,4 +25,16 @@ class User < ApplicationRecord
         return false if user.id.nil?
         !followers.where(follower_id: user.id).first.nil?
     end
+
+    def buzz_count
+        999
+    end
+
+    def followed_count
+        666
+    end
+
+    def followers_count
+        555
+    end
 end
