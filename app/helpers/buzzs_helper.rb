@@ -1,5 +1,5 @@
 module BuzzsHelper
-    def buzzs_params
-        params.require(:buzz).permit(:text)
-    end
+  def buzzs_params
+    params.require(:buzz).permit(:text)
+  end
 end

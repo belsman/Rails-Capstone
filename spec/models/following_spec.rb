@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Following, type: :model do
   context 'Checking User to User connections' do
-    before(:each) do 
+    before(:each) do
       @userA = User.create(username: 'apple', fullname: 'Apple Mango')
       @userB = User.create(username: 'banana', fullname: 'Banana Guava')
       @userC = User.create(username: 'cashew', fullname: 'Cashew Paw-paw')
