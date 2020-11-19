@@ -1,76 +1,76 @@
 body {
-    background-color: #F5F8FA;
+  background-color: #f5f8fa;
 }
 
 textarea {
-    resize: none;
-    border: none;
-    overflow: auto;
-    outline: none;
-    box-shadow: none;
+  resize: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
 }
 
 .user-info {
-    background-color: #14171A;
-}
-
-.user-profile-nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    a {
-        text-decoration: none;
-        display: block;
-        padding: 12px 0;
-        color: inherit;
-    }
-
-    a:hover {
-        background-color: #1DA1F2;
-    }
-}
-
-.top-nav {
-    background-color: #1DA1F2;
-
-    input {
-        width: 20px;
-        border: none;
-        background-image: url('magnify2.svg');
-        background-size: 17px;
-        background-repeat: no-repeat;
-        background-color: inherit;
-        background-position: 5% 50%;
-    }
-
-    input:focus {
-        background-color: #f9f9f9;
-        background-image: url('magnify.svg');
-        border-radius: 7px;
-        outline: none;
-        width: 200px;
-        padding-left: 20px;
-        -webkit-transition: width 0.5s ease-in-out;
-        transition: width 0.5s ease-in-out;
-    }
+  background-color: #14171a;
 }
 
 .buzz-nav {
   a {
     font-style: italic;
     font-weight: 700;
-    border-bottom: 3px solid #1DA1F2;
-  }    
+    border-bottom: 3px solid #1da1f2;
+  }
+}
+
+.user-profile-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    color: inherit;
+  }
+
+  a:hover {
+    background-color: #1da1f2;
+  }
+}
+
+.top-nav {
+  background-color: #1da1f2;
+
+  input {
+    width: 20px;
+    border: none;
+    background-image: url('magnify2.svg');
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-position: 5% 50%;
+  }
+
+  input:focus {
+    background-color: #f9f9f9;
+    background-image: url('magnify.svg');
+    border-radius: 7px;
+    outline: none;
+    width: 200px;
+    padding-left: 20px;
+    -webkit-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+  }
 }
 
 .bg-twitter-light-gray {
-    background-color: #F5F8FA;
+  background-color: #f5f8fa;
 }
 
 .cover-image-container {
-    img.cover-img {
-      height: 250px;
-      width: 100%;
-    }
+  img.cover-img {
+    height: 250px;
+    width: 100%;
+  }
 }

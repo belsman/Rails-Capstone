@@ -1,26 +1,25 @@
 .user-account {
-    width: 100%;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .clear-fix {
-    clear: both;
-    display: table;
-    content: "";
+  clear: both;
+  display: table;
+  content: "";
 }
 
 @media only screen and (min-width: 768px) {
-    .user-account {
-        width: 75%;
-    }
+  .user-account {
+    width: 75%;
+  }
 }
-  
+
 @media (min-width: 920px) {
-    .user-account {
-        width: 50%;
-    }
+  .user-account {
+    width: 50%;
+  }
 }
-  

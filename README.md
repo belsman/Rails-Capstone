@@ -9,6 +9,14 @@
 
 ![screenshot](./image/screenshot2.png)
 
+## Project Description Video
+
+🔗 [loom](https://www.loom.com/share/43c8209d90c94e21a2245c22e29e5dfb)
+
+## Live demo
+
+🔗 [visit buzzer](https://rawcdn.githack.com/belsman/HTML-CSS-Captsone/df34d0f3569b8b2e60faecb02082b0f5e9a544f6/index.html)
+
 ## Built With
 
 - Ruby 2.7
@@ -24,9 +32,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-In order for ```buzzer``` to work locally on your machine, you need:
-- A Ruby installation
-- A Postgres database
+In order for ```buzzer``` to work locally on your machine, you need these installations:
+- Ruby
+- Postgres database engine
 
 ### Install
 
@@ -47,8 +55,8 @@ git clone git@github.com:belsman/Rails-Capstone.git
 4) Run ```bundle install```
 5) Run ```yarn install```
 6) Create database and run migrations with these command:
-  - ```rails db:create```
-  - ```rails db:migrate```
+    - ```rails db:create```
+    - ```rails db:migrate```
 7) Start up the local server with ```rails s```
 8) Visit ```127.0.0.1:3000```
 9) Buzz and connect locally!
@@ -84,4 +92,4 @@ Give a ⭐️ if you like this project!
 
 - Microverse for showing the way for this project to happen
 - [Gregoire Vella on Behance](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
-- [This site for the Bee Icons](https://imgbin.com/png/WgMAZSB0/bee-png)
+- [This site for the Bee Icon](https://imgbin.com/png/WgMAZSB0/bee-png)
