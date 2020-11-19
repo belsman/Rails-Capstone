@@ -40,4 +40,4 @@ class UsersController < ApplicationController
       redirect_to user_path(@user), alert: "Can't complete this action."
     end
   end
-  end
+end

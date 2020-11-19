@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context 'Checking User Fields validations' do
     before(:each) do
-      @userA = User.create(username: 'apple', fullname: 'Apple Mango')
+      @user_a = User.create(username: 'apple', fullname: 'Apple Mango')
     end
 
     it "expects 'User.count' is equal 1" do
