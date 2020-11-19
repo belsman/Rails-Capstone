@@ -13,7 +13,7 @@ class User < ApplicationRecord
     def who_to_follow
         Following.where("follower_id != #{id}").map do |f|
             f.followed if f.followed_id != self.id
-        end.slice(0, 5).compact
+        end.slice(0, 5).compact.uniq
     end
 
     def users_who_followed

@@ -1,11 +1,6 @@
 <div class="d-flex justify-content-center align-items-center py-3">
     <% if current_user != @user && !current_user.following?(@user) %>
-        <%= form_with(:url => followings_path) do |f| %>
-            <%= f.hidden_field :user_id, value: @user.id %>
-            <%= f.button :submit, class: 'text-success rounded-circle mr-2 border d-block' do %>
-                <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
-            <% end %>
-        <% end %>
+        <%= render partial: 'follow_button', locals: {user: @user} %>
     <% elsif current_user != @user && current_user.following?(@user) %>
         <%= form_with(:url => following_path(@user), method: :delete) do |f| %>
             <%= f.hidden_field :user_id, value: @user.id %>
@@ -32,19 +27,11 @@
 </div>
 
 <% if current_user != @user %>
-<div class="d-flex border-bottom p-2 mb-3">
-    <span class="text-secondary">FOLLOWED BY</span>
-</div>
-
-<div class="d-flex p-2">
-    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="60" height="60" >
-    <div class="pl-2">
-        <strong class="text-secondary"><%= @user.fullname %></strong><br>
-        <span>@<%= @user.username %> </span>
+    <div class="d-flex border-bottom p-2 mb-3">
+        <span class="text-secondary">FOLLOWED BY</span>
     </div>
-    <%= link_to followings_path, class: "text-decoration-none text-secondary big-icon ml-auto align-self-center" do %>
-        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
-    <% end %>
-</div>
 
+    <ul class="bg-white m-0 p-0">
+        <%= render :partial => "follow_by_user", :collection => @users_who_followed, as: :follow %>
+    </ul>
 <% end %>

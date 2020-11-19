@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by_id!(params[:id])
         @user_buzzs = @user.buzzs.ordered_by_most_recent
+        @users_who_followed = @user.users_who_followed
         @new_buzz = Buzz.new
     end
 

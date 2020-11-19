@@ -1,0 +1,15 @@
+<div class="d-flex p-2">
+    <%= render partial: "avatar", locals: {user: follow, s: '60', class_str: "rounded-circle" } %>
+    <div class="pl-2">
+        <%= link_to user_path(follow), class: "pl-1 text-decoration-none text-secondary" do %>
+            <strong><%= follow.fullname %> </strong>
+        <% end %>
+        <br>
+        <span>@<%= follow.username %></span>
+    </div>
+    <div class="ml-auto align-self-center">
+        <% if follow != current_user && !current_user.following?(follow)  %>
+            <%= render partial: 'follow_button', locals: { user: follow } %>
+        <% end %>
+    </div>
+</div>
