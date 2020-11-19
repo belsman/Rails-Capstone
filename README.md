@@ -20,7 +20,7 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -84,3 +84,4 @@ Give a ⭐️ if you like this project!
 
 - Microverse for showing the way for this project to happen
 - [Gregoire Vella on Behance](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+- [This site for the Bee Icons](https://imgbin.com/png/WgMAZSB0/bee-png)
