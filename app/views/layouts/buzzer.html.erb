@@ -15,7 +15,7 @@
   <body>
     <div class="container-fluid">
         <div class="row vh-100">
-          <div id="profile-section" class="col-2 h-100 bg-dark text-secondary p-0" style="position: fixed !important;">
+          <div id="profile-section" class="col-2 position-fixed h-100 bg-dark text-secondary p-0">
             <div class="user-info d-flex p-3">
               <%= render partial: "users/avatar", locals: {user: current_user, s: '70', class_str: '' } %>
               <span class="text-uppercase pl-1 align-self-center"><%= current_user.fullname %></span>
