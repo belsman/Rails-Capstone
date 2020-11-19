@@ -17,29 +17,9 @@
       <span class="h6 text-secondary">WHO TO FOLLOW</span>
     </div>
 
-    <div class="who-to-follow d-flex px-2 mb-3">
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="75" height="75" >
-      <div class="pl-2">
-        <span class="text-secondary"><strong>John Doe</strong></span>
-        <p><span class="text-secondary">Followed by</span> <span class="text-primary">Mary Moe</span></p>
-      </div>
-    </div>
-
-    <div class="who-to-follow d-flex px-2 mb-3">
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="75" height="75" >
-      <div class="pl-2">
-        <span class="text-secondary"><strong>John Doe</strong></span>
-        <p><span class="text-secondary">Followed by</span> <span class="text-primary">Mary Moe</span></p>
-      </div>
-    </div>
-
-    <div class="who-to-follow d-flex px-2 mb-3">
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="75" height="75" >
-      <div class="pl-2">
-        <span class="text-secondary"><strong>John Doe</strong></span>
-        <p><span class="text-secondary">Followed by</span> <span class="text-primary">Mary Moe</span></p>
-      </div>
-    </div>
+    <ul class="buzzs bg-white m-0 p-0">
+      <%= render :partial => "who_to_follow", :collection => @who_to_follow, as: :follow %>
+    </ul>
 
   </div>
 </div>

@@ -1,0 +1,11 @@
+<div class="who-to-follow d-flex px-2 mb-3">
+    <%= render partial: "users/avatar", locals: {user: follow, s: '60', class_str: "rounded-circle" } %>
+    <div class="pl-2">
+        <span class="text-secondary">
+            <%= link_to user_path(follow), class: "pl-1 text-decoration-none text-secondary" do %>
+                <strong><%= follow.fullname %> </strong>
+            <% end %>
+        </span>
+        <p><span class="text-secondary">Followed by</span> <span class="text-primary"><%= follow.who_follows %> </span></p>
+    </div>
+</div>

@@ -10,6 +10,16 @@ class User < ApplicationRecord
     has_one_attached :avatar_image
     has_one_attached :cover_image
 
+    def who_to_follow
+        Following.where("follower_id != #{id}").map do |f|
+            f.followed if f.followed_id != self.id
+        end.slice(0, 5).compact
+    end
+
+    def users_who_followed
+        followers.map { |f| f.follower if f.follower_id != self.id }.slice(0, 5).compact
+    end
+
     def follow(user)
         followed.create(followed_id: user.id) unless following?(user)
     end
@@ -44,6 +54,12 @@ class User < ApplicationRecord
     def timeline_buzzs
         query_string = "INNER JOIN followings ON followings.followed_id = buzzs.author_id AND followings.follower_id = #{id}"
         Buzz.joins(query_string).ordered_by_most_recent
+    end
+
+
+    def who_follows
+        f = followers.where("follower_id != #{id}").first
+        f ? f.follower.fullname : f
     end
 
     after_create do

@@ -6,6 +6,7 @@ class BuzzsController < ApplicationController
     def index
         @new_buzz = Buzz.new
         @timeline_buzzs = current_user.timeline_buzzs
+        @who_to_follow = current_user.who_to_follow
     end
 
     def create
