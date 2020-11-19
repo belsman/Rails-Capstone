@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag asset_path('imgbin-bee-honey-bee-bee-illustration-bQ5tiYWiVCxLhrJFwQQ2gnSgK.jpg') %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag "https://kit.fontawesome.com/a076d05399.js" %>
+    
   </head>
 
   <body>
@@ -51,7 +53,7 @@
               <nav class="top-nav d-flex justify-content-between p-3">
                 <div class="left-top">
                   <%= link_to buzzs_path, class: "text-decoration-none text-white" do %>
-                    <i class='fas fa-hippo'></i>
+                    <%= image_tag 'imgbin-bee-honey-bee-bee-illustration-bQ5tiYWiVCxLhrJFwQQ2gnSgK.jpg', size: '30' %>
                   <% end %>
                 </div>
                 <div class="right-top d-flex">
