@@ -15,7 +15,7 @@ class FollowingsController < ApplicationController
         begin
             user = User.find(params[:user_id])
             current_user.unfollow(user)
-            redirect_to user_path(user), notice: "You have unfollowed #{user.fullname.upcase}"
+            redirect_to user_path(user), alert: "You have unfollowed #{user.fullname.upcase}"
         rescue => exception
             redirect_to root_path, notice: "Can't complete this request"
         end

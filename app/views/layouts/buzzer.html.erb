@@ -15,7 +15,7 @@
   <body>
     <div class="container-fluid">
         <div class="row vh-100">
-          <div id="profile-section" class="col-2 h-100 bg-dark text-secondary p-0">
+          <div id="profile-section" class="col-2 h-100 bg-dark text-secondary p-0" style="position: fixed !important;">
             <div class="user-info d-flex p-3">
               <%= render partial: "users/avatar", locals: {user: current_user, s: '70', class_str: '' } %>
               <span class="text-uppercase pl-1 align-self-center"><%= current_user.fullname %></span>
@@ -47,7 +47,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-10 p-0">
+          <div class="col-10 p-0 offset-2">
               <nav class="top-nav d-flex justify-content-between p-3">
                 <div class="left-top">
                   <%= link_to buzzs_path, class: "text-decoration-none text-white" do %>
@@ -65,13 +65,13 @@
                 </div>
               </nav>
               <% if notice.present? %>
-                <div class="notice">
-                  <p> <%= notice %> </p>
+                <div class="notice alert alert-success text-center">
+                  <strong><%= notice %></strong>
                 </div>
               <% end %>
               <% if alert.present? %>
-                <div class="alert">
-                  <p> <%= alert %> </p>
+                <div class="alert alert alert-danger text-center">
+                  <strong><%= alert %></strong>
                 </div>
               <% end %>
               <%= yield %>
