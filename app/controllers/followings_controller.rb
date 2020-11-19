@@ -9,6 +9,7 @@ class FollowingsController < ApplicationController
 
   def destroy
     user = User.find_by_id!(params[:user_id])
+    user.destroy
     redirect_to user_path(user), alert: "You have unfollowed #{user.fullname.upcase}"
   end
 end
