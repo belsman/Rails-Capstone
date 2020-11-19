@@ -67,3 +67,10 @@ textarea {
 .bg-twitter-light-gray {
     background-color: #F5F8FA;
 }
+
+.cover-image-container {
+    img.cover-img {
+      height: 250px;
+      width: 100%;
+    }
+}

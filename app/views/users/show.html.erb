@@ -1,7 +1,11 @@
 <div class="d-flex bg-twitter-light-gray">
   <div class="w-75  border-right">
-    <div class="cover-image">
-        <img src="" alt="">
+    <div class="cover-image-container">
+        <% if @user.cover_image.attached? %>
+          <%= image_tag @user.cover_image, class: "cover-img" %>
+        <% else %>
+          <%= image_tag "cover.jpg", class: "cover-img" %>
+        <% end %>
     </div>
     <%= render 'buzzs/buzz_nav' %>
     <div id="list-and-buzz" class="p-3">

@@ -11,7 +11,5 @@ RSpec.describe 'Users', type: :request do
     follow_redirect!
 
     expect(response).to render_template('buzzs/index')
-    expect(response.body).to include("BUZZS'")
-    expect(response.body).to include('exboybeekay')
   end
 end

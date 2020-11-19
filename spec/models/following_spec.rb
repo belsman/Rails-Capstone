@@ -12,7 +12,7 @@ RSpec.describe Following, type: :model do
     end
 
     it "return 2 followers for 'userA'" do
-      expect(@user_a.followers.count).to eq(2)
+      expect(@user_a.followers_count).to eq(2)
     end
 
     it 'returns userB is following userA' do
