@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: {multipart: true}) do |f| %>
   <ul>
     <% @user.errors.full_messages.each do |error| %>
         <li><%= error %></li>
@@ -16,7 +16,15 @@
   </div>
   
   <% if @show_media_edit %>
-    <span>We update media here!</span>
+    <div class="custom-file m-3">
+      <%= f.file_field :avatar_image, class: "custom-file-input" %>
+      <%= f.label :avatar_image, "Avatar", class: 'custom-file-label' %>
+    </div>
+
+    <div class="custom-file m-3">
+      <%= f.file_field :cover_image, class: "custom-file-input" %>
+      <%= f.label :cover_image, "Cover Image", class: 'custom-file-label' %>
+    </div>
   <% end %>
 
   <div class="mt-2">

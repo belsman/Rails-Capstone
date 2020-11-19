@@ -18,7 +18,7 @@
             <i class="fas fa-user-edit fa-lg" aria-hidden="true"></i>
         <% end %>
     <% end %>
-    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John Doe" class="rounded-circle" width="100" height="100" >
+    <%= render partial: "avatar", locals: {user: current_user, s: '100', class_str: "rounded-circle" } %>
     <span class="big-icon ml-3 text-secondary"><i class="fa fa-bug fa-lg" aria-hidden="true"></i></span>
 </div>
 <div class="text-center">

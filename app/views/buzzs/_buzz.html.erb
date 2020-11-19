@@ -1,5 +1,5 @@
 <div class="buzz-container d-flex w-100 my-2 p-2 bg-white">
-    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar" width="75" height="75">
+    <%= render partial: "users/avatar", locals: {user: buzz.author, s: '70', class_str: '' } %>
     <div class="px-1 flex-grow-1">
         <div class="buzz-header d-flex justify-content-between">
             <span class="text-secondary"><strong><%= buzz.author.fullname %></strong></span>

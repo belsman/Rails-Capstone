@@ -7,6 +7,9 @@ class User < ApplicationRecord
     has_many :followers, class_name: 'Following', foreign_key: 'followed_id'
     has_many :followed, class_name: 'Following', foreign_key: 'follower_id'
 
+    has_one_attached :avatar_image
+    has_one_attached :cover_image
+
     def follow(user)
         followed.create(followed_id: user.id) unless following?(user)
     end

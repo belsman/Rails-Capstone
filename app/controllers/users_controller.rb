@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :require_login, only: [:show, :edit]
+    before_action :require_login, only: [:show, :edit, :update]
     include UsersHelper
     layout "buzzer", except: [:new]
   
@@ -28,6 +28,16 @@ class UsersController < ApplicationController
     def edit
         @user = User.find_by_id!(params[:id])
         @show_media_edit = true
+    end
+
+    def update
+      @user = User.find_by_id!(params[:id])
+
+      if @user.update(user_params)  
+        redirect_to user_path(@user), notice: "Your profile has been updated."
+      else
+        redirect_to user_path(@user), alert: "Can't complete this action."
+      end
     end
   end
   
