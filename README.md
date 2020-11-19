@@ -9,13 +9,9 @@
 
 ![screenshot](./image/screenshot2.png)
 
-## Project Description Video
-
-🔗 [loom](https://www.loom.com/share/43c8209d90c94e21a2245c22e29e5dfb)
-
 ## Live demo
 
-🔗 [visit buzzer](https://rawcdn.githack.com/belsman/HTML-CSS-Captsone/df34d0f3569b8b2e60faecb02082b0f5e9a544f6/index.html)
+🔗 [visit buzzer](https://shielded-fortress-03440.herokuapp.com/)
 
 ## Built With
 
