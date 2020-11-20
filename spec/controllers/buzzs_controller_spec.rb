@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe BuzzsController, type: :controller do
   before(:each) do
@@ -6,26 +6,30 @@ RSpec.describe BuzzsController, type: :controller do
     @user2 = User.create!(username: 'bello', fullname: 'Bello Babakolo')
   end
 
-  describe "GET index" do
-    it "returns a 200" do
+  describe 'GET index' do
+    it 'returns a 200' do
       login(@user)
       get :index
       expect(response).to have_http_status(:ok)
     end
 
-    it "renders the index template" do
+    it 'returns a 302 when not logged in' do
+      get :index
+      expect(response).to redirect_to(new_session_path)
+    end
+
+    it 'renders the index template' do
       login(@user)
       get :index
-      expect(response).to render_template("index")
+      expect(response).to render_template('index')
     end
   end
 
-  describe "CREATE buzz" do
-    it "redirects to buzzs_url" do
+  describe 'CREATE buzz' do
+    it 'redirects to buzzs_url' do
       login(@user2)
-      post :create, :params => { :buzz => { :text => "Hello World!" } }
-      expect(subject).to redirect_to(buzzs_url)
+      post :create, params: { buzz: { text: 'Hello World!' } }
+      expect(response).to redirect_to(buzzs_url)
     end
   end
-
 end
