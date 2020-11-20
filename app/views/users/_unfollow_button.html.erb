@@ -1,0 +1,6 @@
+<%= form_with(:url => following_path(@user), method: :delete) do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.button :submit, class: 'text-danger rounded-circle mr-2 border d-block' do %>
+        <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
+    <% end %>
+<% end %>
