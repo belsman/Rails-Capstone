@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   def unfollow(user)
     f = followed.where(followed_id: user.id).first
-    f&.destroy
+    f ? f.destroy : false
   end
 
   def following?(user)

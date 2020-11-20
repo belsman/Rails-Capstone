@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       login(@user)
       redirect_to root_path, notice: "Successfully logged in as #{@user.username}"
     else
+      @user = User.new
       flash.now[:notice] = "Logging in failed. #{sessions_params[:username]} doesn't exist!"
       render :new
     end

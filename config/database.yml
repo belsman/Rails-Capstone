@@ -23,6 +23,9 @@ default: &default
 
 development:
   <<: *default
+  username: postgres
+  password: password
+  host: localhost
   database: buzzer_development
 
   # The specified database role being used to connect to postgres.
