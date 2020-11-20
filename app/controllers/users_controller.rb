@@ -27,12 +27,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id!(params[:id])
+    @user = User.find_by_id!(user_id_param)
     @show_media_edit = true
   end
 
   def update
-    @user = User.find_by_id!(params[:id])
+    @user = User.find_by_id!(user_id_param)
 
     if @user.update(user_params)
       redirect_to user_path(@user), notice: 'Your profile has been updated.'
